@@ -23,10 +23,12 @@ password: Ss123-*
 git clone https://github.com/rafaelchirel/dominical.git
 ```
 
-- Dentro del proyecto (en la raiz), crear un archivo llamado `.env`
-- Luego copiar todo el contenido de `.env.example` y pegarlo en el nuevo archivo creado `.env`
-- Desde phpMyAdmin, importar base de datos (db), se encuentra en la carpeta BDD del proyecto.
-- Asociar las credencias de la base de datos en el archivo `.env`
+**Archivo .sql (base de datos) - Importar desde phpmyadmin**
+```shell
+dominical/base de datos/dominical.sql
+```
+
+**Credencias de la base de datos se encuentran en el archivo `.env`**
 ```php
 	DB_CONNECTION=mysql
 	DB_HOST=127.0.0.1
@@ -36,12 +38,23 @@ git clone https://github.com/rafaelchirel/dominical.git
 	DB_PASSWORD=
 ```
 
-**Composer**
+**Dependencias**
 ```shell
-npm install
 composer install
 php artisan key:generate
-php artisan serve
+npm install
+```
+**Path URI Vuejs Editar**
+```shell
+	dominicals/resources/assets/js/components/Const.vue
+		apiURL: 'http://localhost/dominical/public'
+	command: npm run dev
+```
+
+**iniciar**
+```shell
+	http://127.0.0.1:8000
+	http://localhost/dominical/public
 ```
 
 ## Colaborar
